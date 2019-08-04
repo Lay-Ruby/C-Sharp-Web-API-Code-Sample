@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="efc_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="fuel_delivery_event">
+          <Key>
+            <PropertyRef Name="pkey" />
+          </Key>
+          <Property Name="pkey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="current_stop" Type="int" Nullable="false" />
+          <Property Name="next_stop" Type="int" Nullable="false" />
+          <Property Name="current_fuel_level" Type="int" Nullable="false" />
+          <Property Name="stop_datetime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="efc_testModelStoreContainer">
+          <EntitySet Name="fuel_delivery_event" EntityType="Self.fuel_delivery_event" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="efc_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="fuel_delivery_event">
+          <Key>
+            <PropertyRef Name="pkey" />
+          </Key>
+          <Property Name="pkey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="current_stop" Type="Int32" Nullable="false" />
+          <Property Name="next_stop" Type="Int32" Nullable="false" />
+          <Property Name="current_fuel_level" Type="Int32" Nullable="false" />
+          <Property Name="stop_datetime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="efc_testEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="fuel_delivery_event" EntityType="Self.fuel_delivery_event" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="efc_testModelStoreContainer" CdmEntityContainer="efc_testEntities1">
+          <EntitySetMapping Name="fuel_delivery_event">
+            <EntityTypeMapping TypeName="efc_testModel.fuel_delivery_event">
+              <MappingFragment StoreEntitySet="fuel_delivery_event">
+                <ScalarProperty Name="pkey" ColumnName="pkey" />
+                <ScalarProperty Name="current_stop" ColumnName="current_stop" />
+                <ScalarProperty Name="next_stop" ColumnName="next_stop" />
+                <ScalarProperty Name="current_fuel_level" ColumnName="current_fuel_level" />
+                <ScalarProperty Name="stop_datetime" ColumnName="stop_datetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
